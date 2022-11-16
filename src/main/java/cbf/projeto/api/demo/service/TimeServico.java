@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import cbf.projeto.api.demo.dto.TimeDTO;
 import cbf.projeto.api.demo.entity.Time;
+import cbf.projeto.api.demo.exception.TimeNullException;
 import cbf.projeto.api.demo.repository.TimeRepository;
 
 //Pesquisar a respeito da JpaRepository na documentação
@@ -21,6 +22,9 @@ public class TimeServico {
 
     public TimeDTO cadastrarTime(TimeDTO time) throws Exception{
         Time  entity = toEntity(time);
+        if (time.getNome() == null){
+            throw new TimeNullException();
+        }
         if (time.getId() == null){
             Integer newId  = Math.toIntExact(repository.count() + 1);
             entity.setId(newId);
