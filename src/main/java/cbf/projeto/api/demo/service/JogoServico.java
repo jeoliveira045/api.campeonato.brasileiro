@@ -170,7 +170,7 @@ public class JogoServico {
             final List<Jogo> jogosMandante = jogoRepository.findByTime1AndEncerrado(time, true);
             final List<Jogo> jogosVisitante = jogoRepository.findByTime2AndEncerrado(time, true);
             AtomicReference<Integer> vitorias = new AtomicReference<>(0); // Pesquisar mais a respeito sobre essa classe e por que ela é tilizada. Revisitar essa parte do projeto
-            // pra fixar mais o por que dessa forma de escrever o codigo ter sido adotada
+            // pra fixar mais do por que dessa forma de escrever o codigo ter sido adotada
             AtomicReference<Integer> derrotas = new AtomicReference<>(0);
             AtomicReference<Integer> empates = new AtomicReference<>(0);
             AtomicReference<Integer> golsMarcados = new AtomicReference<>(0);

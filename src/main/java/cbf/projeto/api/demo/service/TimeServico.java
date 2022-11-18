@@ -21,7 +21,7 @@ public class TimeServico {
     private TimeRepository repository;
 
     public TimeDTO cadastrarTime(TimeDTO time) throws Exception{
-        Time  entity = toEntity(time);
+        Time entity = toEntity(time);
         if (time.getNome() == null){
             throw new TimeNullException();
         }
