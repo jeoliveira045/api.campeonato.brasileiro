@@ -28,7 +28,7 @@ public class TimeServico {
         if (time.getId() == null){
             Integer newId  = Math.toIntExact(repository.count() + 1);
             entity.setId(newId);
-            entity = repository.save(entity);
+            entity = repository.save(entity); // o método save do repositório adiciona o objeto no banco de dados na forma de uma linha
             return toDTO(entity);
         }
         else{
